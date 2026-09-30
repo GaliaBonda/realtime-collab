@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #f4efe6;
+  --ink: #1c1917;
+  --background: #f4efe6;
+  --foreground: #1c1917;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+.collab-editor .tiptap {
+  max-width: 42rem;
+  margin: 0 auto;
+  min-height: 60vh;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  outline: none;
+}
+
+.collab-editor .tiptap p.is-editor-empty:first-child::before {
+  color: #a8a29e;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+.collab-editor .tiptap h1 {
+  font-size: 1.85rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  margin: 1.4rem 0 0.6rem;
+}
+
+.collab-editor .tiptap h2 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 1.2rem 0 0.4rem;
+}
+
+.collab-editor .tiptap ul,
+.collab-editor .tiptap ol {
+  padding-left: 1.25rem;
+  margin: 0.5rem 0;
+}
+
+.collab-editor .tiptap blockquote {
+  border-left: 3px solid #0f766e;
+  padding-left: 0.9rem;
+  color: #44403c;
+  margin: 0.8rem 0;
+}
+
+.collaboration-carets__caret {
+  position: relative;
+  margin-left: -1px;
+  margin-right: -1px;
+  border-left: 1px solid currentColor;
+  border-right: 1px solid currentColor;
+  word-break: normal;
+  pointer-events: none;
+}
+
+.collaboration-carets__label {
+  position: absolute;
+  top: -1.35em;
+  left: -1px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  user-select: none;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 3px 3px 3px 0;
+  white-space: nowrap;
+  background: currentColor;
+}
+
+.collaboration-carets__selection {
+  background-color: currentColor;
+  opacity: 0.25;
+  pointer-events: none;
+}
